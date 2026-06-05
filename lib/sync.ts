@@ -157,12 +157,13 @@ export async function syncAllProducts(): Promise<{ synced: number; errors: numbe
   let errors = 0
 
   do {
-    const data = await shopifyGraphQL<{
+    type ProductsPage = {
       products: {
         pageInfo: { hasNextPage: boolean; endCursor: string }
         edges: { node: Product }[]
       }
-    }>(ALL_PRODUCTS_QUERY, { first: 50, after: cursor })
+    }
+    const data: ProductsPage = await shopifyGraphQL<ProductsPage>(ALL_PRODUCTS_QUERY, { first: 50, after: cursor })
 
     const { products } = data
 
