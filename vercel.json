@@ -1,0 +1,8 @@
+{
+  "crons": [
+    {
+      "path": "/api/cron/sync-b2b-prices",
+      "schedule": "0 1 * * *"
+    }
+  ]
+}
