@@ -3,6 +3,10 @@
     {
       "path": "/api/cron/sync-b2b-prices",
       "schedule": "0 1 * * *"
+    },
+    {
+      "path": "/api/cron/sync-b2c-dmoc",
+      "schedule": "10 1 * * *"
     }
   ]
 }
